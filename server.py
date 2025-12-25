@@ -1,14 +1,20 @@
 from pymongo import MongoClient
 from bs4 import BeautifulSoup
 import requests
+from dotenv import load_dotenv
+import os
+
+mongo_uri = os.getenv("MONGODB_URI")
+db_name = os.getenv("DB_NAME")
+collection_name = os.getenv("COLLECTION_NAME")
 
 # mongodb connections 
 # Connect to MongoDB
-client = MongoClient("mongodb+srv://pradip:pradip@cluster0.gwnfg.mongodb.net/?appName=Cluster0")
+client = MongoClient(mongo_uri)
 # Access database
-db = client["mydatabase"]
+db = client[db_name]
 # Access collection
-collection = db["users"]
+collection = db[collection_name]
 print("Connected to MongoDB")
 
 
