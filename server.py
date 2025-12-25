@@ -4,7 +4,10 @@ import requests
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
+
 mongo_uri = os.getenv("MONGODB_URI")
+
 db_name = os.getenv("DB_NAME")
 collection_name = os.getenv("COLLECTION_NAME")
 
